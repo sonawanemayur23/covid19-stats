@@ -34,7 +34,7 @@ export default function StateDetails({ match, history }) {
 
           <Row>
             
-            <Title style={{ fontSize: Theme.size.xl,color:Theme.color.primary }} level={4}>
+            <Title style={{ fontSize: Theme.size.xxl,color:Theme.color.primary }} level={4}>
               {stateName}
             </Title>
           </Row>
@@ -42,7 +42,7 @@ export default function StateDetails({ match, history }) {
         {stateData && (
           <Table responsive size="sm" hover>
             <thead>
-              <tr>
+              <tr style={{color:Theme.color.primary}}>
                 <th>District</th>
                 <th>Confirmed</th>
                 <th>Active</th>
@@ -56,7 +56,7 @@ export default function StateDetails({ match, history }) {
                   key={index}
                   onClick={() => history.push(`/state-details/${entry.state}`)}
                 >
-                  <th scope="row">{entry}</th>
+                  <th scope="row" style={{color:Theme.color.primary}}>{entry}</th>
                   <td style={{ color: Theme.color.confirmed }}>
                     {numberFormat(data[entry]["confirmed"])}
                     <small style={{ padding: Theme.padding.md }}>

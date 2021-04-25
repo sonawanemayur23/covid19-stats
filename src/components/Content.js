@@ -8,7 +8,7 @@ import StateDetails from "./StateDetails"
 const { Content } = Layout;
 export default function AppContent() {
   return (
-    <Content style={{ marginLeft: "10%", marginRight: "10%",marginTop:"2rem" }}>
+    <Content style={{ marginLeft: "5%", marginRight: "5%",marginTop:"2rem" }}>
       <div className="site-layout-background" >
         <HashRouter>
           <Switch>
