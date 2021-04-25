@@ -1,2 +1,1 @@
-# covid19-stats
-This is dashboard for covid19 statistics in India. 
+# COVID19 Statatics
