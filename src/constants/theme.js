@@ -16,9 +16,9 @@ const Theme = {
         // xxl:"2vw",
         // xxxl:"2.2vw"
         xs:"10px",
-        sm:"14px",
-        md:"18px",
-        xl:"20px",
+        sm:"12px",
+        md:"16px",
+        xl:"18px",
         xxl:"28px",
         xxxl:"36px"
     },
