@@ -14,7 +14,7 @@ const [data, setData] = useState(null)
 
   return (
     <div>
-       <marquee>All data is provided by covid19india.org, volunteer driven, crowdsourced tracker for Covid19 cases in India. </marquee>
+     
      {data && <TotalCasesCards data={data} {...props}/>}
      {data && <CasesTable data={data} {...props}/>}
     </div>

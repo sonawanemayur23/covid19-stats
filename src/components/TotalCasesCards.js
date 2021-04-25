@@ -33,57 +33,70 @@ export default function TotalCasesCards({ data }) {
       : [];
   });
 
-  console.log(dataSource);
+  
   const styles = (item) => {
     if (item.title === "Confirmed") {
       return {
         color: Theme.color.confirmed,
         borderRadius: 10,
-        background: `linear-gradient(180deg, #f2cbd0 0%, white 100%)`,
+        background: `linear-gradient(180deg, #f2cbd0 0%, #f2cbd0 100%)`,
+        boxShadow:" 4px 4px 2px 0px lightgray"
       };
     }
     if (item.title === "Active") {
       return {
         color: Theme.color.active,
         borderRadius: 10,
-        background: `linear-gradient(180deg, #cbccf2 0%, white 100%)`,
+        background: `linear-gradient(180deg, #cbccf2 0%,  #cbccf2 100%)`,
+        boxShadow:" 4px 4px 2px 0px lightgray"
       };
     }
     if (item.title === "Recovered") {
       return {
         color: Theme.color.recovered,
         borderRadius: 10,
-        background: `linear-gradient(180deg, #cef2cb 0%, white 100%)`,
+        background: `linear-gradient(180deg, #cef2cb 0%, #cef2cb 100%)`,
+        boxShadow:" 4px 4px 2px 0px lightgray"
       };
     }
     if (item.title === "Deceased") {
       return {
         color: Theme.color.deaths,
         borderRadius: 10,
-        background: `linear-gradient(180deg, #c1c6c1 0%, white 100%)`,
+        background: `linear-gradient(180deg, #c1c6c1 0%, #c1c6c1 100%)`,
+        boxShadow:" 4px 4px 2px 0px lightgray"
       };
     }
   };
   return (
-    <div>
+    <div className="cards">
       <Row>
         <Col xs={2} sm={4} md={6} lg={8} xl={4}></Col>
         <Col xs={20} sm={16} md={12} lg={8} xl={16}>
           <Row>
-            {" "}
-            <Title style={{ fontSize: Theme.size.xxl,color:Theme.color.primary }} level={4}>
+            
+            <Title style={{ fontSize: Theme.size.xxxl,color:Theme.color.primary,cursor:"pointer" }}level={4}>
               COVID19 INDIA ❤️ 
             </Title>
           </Row>
 
-          <List
-            grid={{ gutter: 16, column: 4 }}
+          <List 
+          
+            grid={{
+              gutter: 16,
+              xs: 2,
+              sm: 2,
+              md: 2,
+              lg: 2,
+              xl: 4,
+              xxl: 4,
+            }}
             dataSource={dataSource[0]}
             renderItem={(item) => (
               <List.Item>
                 <Card style={styles(item)}>
                   <Row>
-                    {" "}
+                    
                     <span
                       style={{
                         fontSize: Theme.size.md,
@@ -94,13 +107,16 @@ export default function TotalCasesCards({ data }) {
                   </Row>
                   
                   <Row>
-                    {" "}
-                    {item.delta && (
+                    
+                    {item.delta !== 0 ?   (
                       <span style={{ fontSize: Theme.size.sm }}>
-                        {" "}
+                        
                         + {numberFormat(item.delta)}
                       </span>
-                    )}
+                    ):  <span style={{ fontSize: Theme.size.sm }}>
+                        
+                        🕐
+                  </span>}
                   </Row>
                   <Row>
                     <span

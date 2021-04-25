@@ -1,16 +1,17 @@
 import React, { useEffect, useState } from "react";
 import API from "../api/index";
 import { Table } from "reactstrap";
-import { Row, Col } from "antd";
+import { Row, Col,Typography } from "antd";
 import numberFormat from "../util/numberFormat";
 import Theme from "../constants/theme";
 import { ArrowUpOutlined } from "@ant-design/icons";
 export default function StateDetails({ match, history }) {
   const [data, setData] = useState(null);
   const [stateData, setStateData] = useState(null);
-
+  const { Title } = Typography;
+  const stateName = match.params.name;
   useEffect(() => {
-    const stateName = match.params.name;
+    
     API.url
       .get(API.path.stateDistrict)
       .then((res) => {
@@ -18,12 +19,26 @@ export default function StateDetails({ match, history }) {
         setStateData(Object.keys(res.data[stateName]?.districtData));
       })
       .catch((err) => console.log(err));
-  }, [match]);
+  }, [match,stateName ]);
   console.log(data);
   return (
     <Row>
       <Col xs={2} sm={4} md={6} lg={8} xl={4}></Col>
       <Col xs={20} sm={16} md={12} lg={8} xl={16}>
+      <Row>
+            
+            <Title  onClick={()=>history.goBack()} style={{ fontSize: Theme.size.xxxl,color:Theme.color.primary,cursor:"pointer" }} level={4}>
+              COVID19 INDIA ❤️ 
+            </Title>
+          </Row>
+
+          <Row>
+            
+            <Title style={{ fontSize: Theme.size.xl,color:Theme.color.primary }} level={4}>
+              {stateName}
+            </Title>
+          </Row>
+
         {stateData && (
           <Table responsive size="sm" hover>
             <thead>

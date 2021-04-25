@@ -9,12 +9,18 @@ const Theme = {
         black:"#000"
     },
     size:{
-        xs:"0.5vw",
-        sm:"1vw",
-        md:"1.2vw",
-        xl:"1.4vw",
-        xxl:"2vw",
-        xxxl:"2.2vw"
+        // xs:"0.5vw",
+        // sm:"1vw",
+        // md:"1.5vw",
+        // xl:"1.5vw",
+        // xxl:"2vw",
+        // xxxl:"2.2vw"
+        xs:"10px",
+        sm:"14px",
+        md:"18px",
+        xl:"20px",
+        xxl:"28px",
+        xxxl:"36px"
     },
     padding:{
         xs:"2px",
