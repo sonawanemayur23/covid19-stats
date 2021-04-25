@@ -54,7 +54,7 @@ export default function StateDetails({ match, history }) {
               {stateData.map((entry, index) => (
                 <tr
                   key={index}
-                  onClick={() => history.push(`/state-details/${entry.state}`)}
+                  
                 >
                   <th scope="row" style={{color:Theme.color.primary}}>{entry}</th>
                   <td style={{ color: Theme.color.confirmed }}>
